@@ -76,6 +76,14 @@ export default function Login() {
           </span>
         </div>
       </section>
+      <div className="vector5">
+        <img
+          src="/Vector5.png"
+          width={300}
+          height={220}
+          alt="image vectorielle design"
+        />
+      </div>
     </>
   );
 }
