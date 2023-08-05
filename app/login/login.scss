@@ -1,0 +1,122 @@
+.vector4{
+    position: absolute;
+    z-index: -2;
+    left: -85px;
+}
+
+#title{   
+    height: 200px;
+    width: 100%; 
+    
+    img{
+        position: absolute;
+        top: 40px;
+        left: 165px;
+        background-color: transparent;
+    }
+}
+
+#connexion{
+    width: 80%;
+    margin: 0 auto;
+
+    h2{
+        margin: 0px 0px 10px 0px;
+        font-size: 20px;        
+    }
+    h3{
+       font-size: 16px;
+       font-weight: 600;
+       color: #515151;
+       margin: 0px 0px 40px 0px;
+    }
+    .inputConnexion{
+        input{
+            width: 93.5%;
+            height: 48px;
+            border-radius: 10px;
+            border: 1px solid #6c6c6c;
+            margin-bottom: 15px;
+            font-size: 15px;
+            font-weight: 500;
+            color: #6d6a6a;
+            padding-left: 5%;            
+        }
+    }
+    .forgottenPwrd{
+        a{
+            text-decoration: none;
+            display: flex;
+            justify-content: flex-end;
+            color: black;
+            font-size: 13px;
+            font-weight: 600;
+            margin-bottom: 40px;
+        }
+    }
+    .connexionBtn{
+        margin-bottom: 70px;
+        button{
+            border: none;
+            border-radius: 10px;
+            background-color: #2ea5e1;
+            width: 100%;
+            height: 48px;
+            color: white;
+            font-size: 18px;
+            font-weight: 500;            
+        }
+    }
+}
+
+#socialNetworkConnexion{
+    width: 80%;
+    margin: 0 auto;
+
+    .separation{
+        display: flex;
+        justify-content: space-between;
+        color: #757171;
+        font-size: 15px;
+        margin-bottom: 25px;
+        
+        span{
+            display: flex;
+            align-items: center;
+
+        }
+    }
+    .group1{
+        ul{
+            padding: 0;
+            display: flex;
+            list-style-type: none;
+            justify-content: space-around;
+            margin-bottom: 30px;
+
+            li{
+                border: 1px solid #e1e1e1;
+                border-radius: 10px;
+                background-color: white;
+                width: 73px;
+                height: 73px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+        }
+    }
+    .newAccount{
+        text-align: center;
+        span{
+            font-size: 13px;
+            color: #636363;
+        }
+        a{
+            font-weight: 600;
+            color: black;
+            text-decoration: none;
+        }
+    }
+}
+
