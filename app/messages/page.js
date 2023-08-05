@@ -1,3 +1,10 @@
+import Header from "../components/Header";
+import "./messages.scss";
+
 export default function Messages() {
-  return <div>Messages</div>;
+  return (
+    <>
+      <Header title="Messages" iconeSrc="/returnarrow.png" />
+    </>
+  );
 }
