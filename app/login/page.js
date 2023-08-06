@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import "./login.scss";
+import FormLogin from "../components/FormLogin";
 
 export default function Login() {
   return (
@@ -28,16 +29,7 @@ export default function Login() {
           <h2>Connexion à votre espace</h2>
           <h3>Bienvenue "User"!</h3>
         </div>
-        <div className="inputConnexion">
-          <input type="text" placeholder="Votre adresse email" />
-          <input type="text" placeholder="Mot de passe" />
-        </div>
-        <div className="forgottenPwrd">
-          <Link href="#">Mot de passe oublié ?</Link>
-        </div>
-        <div className="connexionBtn">
-          <button type="admit">Connexion</button>
-        </div>
+        <FormLogin />
       </section>
       <section id="socialNetworkConnexion">
         <div className="separation">

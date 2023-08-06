@@ -1,4 +1,4 @@
-export default function blocRdv(props) {
+export default function BlocRdv(props) {
   return (
     <div className="containerRdv">
       {props.date && <p>{props.date}</p>}

@@ -1,4 +1,5 @@
 import Header from "../components/Header";
+import BlocRdv from "../components/blocRdv";
 import "./agenda.scss";
 
 export default function Agenda() {
@@ -10,7 +11,7 @@ export default function Agenda() {
         iconeSrc="/logochat.png"
       />
       <h2>Mes rendez-vous</h2>
-      <blocRdv />
+      <BlocRdv />
     </>
   );
 }

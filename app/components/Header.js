@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function Header(props) {
   return (
     <div className="header">
@@ -6,7 +8,9 @@ export default function Header(props) {
       </div>
 
       {props.title && <h2>{props.title}</h2>}
-      <img className="icone" src={props.iconeSrc} alt={props.alt} />
+      <Link href={props.prevUrl || "/"}>
+        <img className="icone" src={props.iconeSrc} alt={props.alt} />
+      </Link>
     </div>
   );
 }
