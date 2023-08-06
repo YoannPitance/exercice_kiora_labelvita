@@ -1,5 +1,5 @@
 import Header from "../components/Header";
-import BlocRdv from "../components/blocRdv";
+import BlocRdv from "../components/BlocRdv";
 import "./agenda.scss";
 
 export default function Agenda() {

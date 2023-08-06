@@ -72,7 +72,7 @@ export default function Login() {
         <img
           src="/Vector5.png"
           width={300}
-          height={220}
+          height={210}
           alt="image vectorielle design"
         />
       </div>

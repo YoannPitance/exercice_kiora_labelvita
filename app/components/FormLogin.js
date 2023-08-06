@@ -9,7 +9,7 @@ export default function FormLogin() {
   });
 
   const handleChange = (event) => {
-    const { type, name, value } = event.target;
+    const { name, value } = event.target;
     setFormata((prev) => {
       return {
         ...prev,
