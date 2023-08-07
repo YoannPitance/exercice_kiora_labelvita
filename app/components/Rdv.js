@@ -5,30 +5,21 @@ import CollapseRdv from "./CollapseRdv";
 export default function Rdv({ name, hour, isActive, handleRdvClick }) {
   const [isCollapsed, setIsCollapsed] = useState(true);
 
-  const handleSignalerArrivee = () => {
-    // logique pour signaler l'arrivée au rendez-vous
-    alert("Arrivée signalée pour le rendez-vous :", name);
-  };
   const handleToggleCollapse = () => {
-    setIsCollapsed((prevIsCollapsed) => !prevIsCollapsed);
+    setIsCollapsed(!isCollapsed);
   };
 
   return (
     <div
       className={`Rdv ${isActive ? "active" : ""}`}
       onClick={() => {
-        handleRdvClick(); // Appeler la fonction pour activer le rdv
-        handleToggleCollapse(); // Appeler la fonction pour activer/désactiver le collapse
+        handleRdvClick(); // Activer le rdv au clic
+        handleToggleCollapse(); // Ouvrir ou fermer le collapse associé au clic sur le rdv
       }}
     >
       <h3>{name}</h3>
       <p>{hour}</p>
-      {!isCollapsed && (
-        <CollapseRdv
-          isActive={isActive}
-          handleSignalerArrivee={handleSignalerArrivee}
-        />
-      )}
+      {!isCollapsed && <CollapseRdv isOpen={true} />}
     </div>
   );
 }

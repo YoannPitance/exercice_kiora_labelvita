@@ -2,10 +2,12 @@
 import React, { useState } from "react";
 import Header from "../components/Header";
 import BlocRdv from "../components/BlocRdv";
+import CollapseRdv from "../components/CollapseRdv";
 import "./agenda.scss";
 
 export default function Agenda() {
   const [activeRdvIndex, setActiveRdvIndex] = useState(-1);
+  const [isCollapseOpen, setIsCollapseOpen] = useState(false);
 
   // données de rendez-vous avec des dates différentes (pourront être appelées depuis l'API et db)
   const rdvs = [
@@ -46,9 +48,11 @@ export default function Agenda() {
             rdvs={rdvs}
             isActive={index === activeRdvIndex}
             setIsActive={() => setActiveRdvIndex(index)}
+            setIsCollapseOpen={setIsCollapseOpen}
           />
         ))}
       </section>
+      <CollapseRdv isOpen={isCollapseOpen} />
     </>
   );
 }
