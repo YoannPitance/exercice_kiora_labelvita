@@ -13,24 +13,31 @@
         padding-right: 40px;
     }
 }
-h2{
-    font-size: 18px;
-}
 #mesRdv{
     display: flex;
     flex-direction: column;
     margin: 0 auto;
     align-items: center;
+    h2{
+        font-size: 18px;
+        align-self: flex-start;
+        margin-top: 25px;
+        margin-bottom: 5px;
+        padding-left: 30px;
+
+    }
     .containerRdv{
+        margin-top: 15px;
         width: 336px;
         height: 212px;
-        background-color: #a0c73e;
+        background-color: #EEF5DC;
         border-radius: 5px;
         display: flex;        
         justify-content: space-between;
+
         .date{
-            align-self: center;
-            color: white;
+            align-self: center;            
+            color: rgba(0, 0, 0, 0.5);
             word-spacing: 20px;
             padding-left: 15px;
             h1{
@@ -38,42 +45,105 @@ h2{
                 font-weight: 500;
             }
         }
+        &.active{            
+            background-color: #a0c73e;
+            .date{
+                color: white;                
+            }
+
+            .Rdv{
+                background-color: #cfe39e;
+                                
+            }
+            .Rdv.active{
+                background-color: #ffffff;
+                h3, p{
+                    color: black;
+                }
+            }
+        }
+        
         .boxRdvs{
             width: 238px;
             display: flex;
             flex-direction: column;
             justify-content: space-evenly;
             align-items: center;
+        }
             
-            .Rdv{
-                &.active{
-                    background-color: white;
-                }
-                display: flex;
-                flex-direction: column;
-                align-items: flex-start;
-                justify-content: center;
-                border-radius: 5px;
-                width: 90%;
-                height: 57px;
-                background-color: rgb(166, 204, 123);
-                h3{
-                    font-size: 15px;
-                    padding-left: 15px;
-                    margin: 0;
-                    
-                }
-                p{
-                    font-size: 12px;
-                    padding-left: 15px;
-                    margin: 5px 0px 0px 0px
-                    
-                }
-
+        .Rdv{
+            &.active{
+                background-color: #ffffff;
+            }
+            background-color: #ffffff;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: center;
+            border-radius: 5px;
+            width: 90%;
+            height: 57px;
+            
+            h3{
+                font-size: 15px;
+                padding-left: 15px;
+                margin: 0;
+                color: rgba(0, 0, 0, 0.5);
+                
+                
+            }
+            p{
+                font-size: 12px;
+                padding-left: 15px;
+                margin: 5px 0px 0px 0px;
+                color: rgba(0, 0, 0, 0.5);
+                
             }
             
-        }
 
+        }
+        
     }
 
 }
+.collapse {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 393px;
+    box-shadow: 0 -5px 15px -10px #333;
+    background-color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+       
+    &.show {
+        height: 171px;
+
+        .collapse-content {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding-bottom: 10px;
+        }
+    }          
+    
+    .btn-circle {
+        width: 119px;
+        height: 119px;
+        border-radius: 50%;
+        border: none;
+        background-color: #2EA5E1;
+        color: #fff;
+        font-size: 18px;
+        font-weight: 600;                    
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+    }
+}
+
+
+
