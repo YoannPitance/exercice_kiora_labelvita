@@ -1,16 +1,24 @@
-export default function ConvBox(props) {
+export default function ConvBox({
+  contact,
+  contactName,
+  contactNumber,
+  contactMsg,
+  hourMsg,
+  isFirst,
+}) {
+  console.log(isFirst);
   return (
-    <div className="boxConversation">
+    <div className={`boxConversation ${isFirst ? "boxConversationFirst" : ""}`}>
       <div className="photoContact">
-        <img src={props.contact} alt="photo du contact" />
+        <img src={contact} alt="photo du contact" />
       </div>
       <div className="infosMsg">
-        <h3>{props.contactName}</h3>
-        <p>{props.contactNumber} </p>
-        <p>{props.contactMsg} </p>
+        <h3>{contactName}</h3>
+        <p className="italic">{contactNumber} </p>
+        <p>{contactMsg} </p>
       </div>
       <div className="hourMsg">
-        <p>{props.hourMsg} </p>
+        <p>{hourMsg} </p>
       </div>
     </div>
   );

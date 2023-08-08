@@ -1,9 +1,16 @@
+"use client";
+import { useState } from "react";
 import Header from "../components/Header";
 import Button from "../components/Button";
 import "./conversations.scss";
 import ConvBox from "../components/ConvBox";
 
 export default function Conversations() {
+  const [activeFilter, setActiveFilter] = useState(null);
+
+  const handleFilterClick = (filter) => {
+    setActiveFilter(filter);
+  };
   // tableaux de données de chaque bulle de conversations itérable depuis Api et db
   const contactsMsgs = [
     {
@@ -43,21 +50,43 @@ export default function Conversations() {
         <div className="searchBox">
           <form>
             <input type="search" placeholder="Prénom, nom..." />
-            <div class="texte_bouton_recherche">
+            <div className="searchBtn">
               <button type="submit" name="rechercher">
                 <img src="/loupe.png" alt="icone loupe recherche" />
               </button>
             </div>
           </form>
           <div className="searchFilter">
-            <Button icone="/iconetous.png" text="Tous" />
-            <Button icone="/iconenonlu.png" text="Non lus" />
-            <Button icone="/iconearchive.png" text="Archivés" />
+            <Button
+              icone="/iconetous.svg"
+              activeIcon="/iconetouswhite.svg"
+              text="Tous"
+              isActive={activeFilter === "Tous"}
+              onClick={() => handleFilterClick("Tous")}
+            />
+            <Button
+              icone="/iconenonlu.svg"
+              activeIcon="/iconenonluwhite.svg"
+              text="Non lus"
+              isActive={activeFilter === "Non lus"}
+              onClick={() => handleFilterClick("Non lus")}
+            />
+            <Button
+              icone="/iconearchive.svg"
+              activeIcon="/iconearchivewhite.svg"
+              text="Archivés"
+              isActive={activeFilter === "Archivés"}
+              onClick={() => handleFilterClick("Archivés")}
+            />
           </div>
         </div>
       </section>
       <section id="conversations">
-        <img src="/bullevertepage3.png" alt="bulle verte design" />
+        <img
+          className="bulleverte"
+          src="/bullevertepage3.png"
+          alt="bulle verte design"
+        />
         <div className="convBoxContainer">
           {contactsMsgs.map((contactInfos, index) => (
             <ConvBox
@@ -67,10 +96,15 @@ export default function Conversations() {
               contactNumber={contactInfos.contactNumber}
               contactMsg={contactInfos.contactMsg}
               hourMsg={contactInfos.hourMsg}
+              isFirst={index === 0} // sert pour determiner le 1 er bloc de conversation pour changer son index
             />
           ))}
         </div>
-        <img src="/bullebleuepage3.png" alt="bulle bleue design" />
+        <img
+          className="bullebleue"
+          src="/bullebleuepage3.png"
+          alt="bulle bleue design"
+        />
       </section>
     </>
   );

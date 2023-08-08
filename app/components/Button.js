@@ -1,9 +1,12 @@
-export default function Button(props) {
+export default function Button({ icone, activeIcon, text, isActive, onClick }) {
   return (
     <>
-      <button className="filterBtn">
-        <img src={props.icone} alt="icone filtre" />
-        <p>{props.text}</p>
+      <button
+        className={`filterBtn ${isActive ? "filterBtnActive" : ""}`}
+        onClick={onClick}
+      >
+        <img src={isActive ? activeIcon : icone} alt="icone filtre" />
+        <p>{text}</p>
       </button>
     </>
   );
