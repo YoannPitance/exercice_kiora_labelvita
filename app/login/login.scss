@@ -1,24 +1,30 @@
-.vector4{
-    position: absolute;
-    z-index: -2;
-    left: -85px;
-}
 
-#title{   
-    height: 200px;
+
+.headerLogin{   
+    background-color: transparent;
     width: 100%; 
-    
-    img{
-        position: absolute;
-        top: 40px;
-        left: 165px;
-        background-color: transparent;
+    height: 170px;
+
+    .vector4{
+    position: relative;
+    z-index: -2;
+    left: 0px;
+    top: 0px;
+    }
+    .logoTitle{
+        position: relative;        
+        
+        top: -280px;
+        left: 165px;        
     }
 }
 
+    
+
 #connexion{
     width: 80%;
-    margin: 0 auto;
+    margin: 15px auto 0px auto;
+    
 
     h2{
         margin: 0px 0px 10px 0px;
@@ -52,11 +58,11 @@
             color: black;
             font-size: 13px;
             font-weight: 600;
-            margin-bottom: 40px;
+            margin-bottom: 30px;
         }
     }
     .connexionBtn{
-        margin-bottom: 70px;
+        margin-bottom: 65px;
         button{
             border: none;
             border-radius: 10px;
@@ -123,8 +129,8 @@
 }
 .vector5{
     z-index: -2;
-    position: absolute;
+    position: relative;
     left: 0px;
-    bottom: 0px;
+    bottom: 140px;
 }
 

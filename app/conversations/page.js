@@ -45,7 +45,9 @@ export default function Conversations() {
   ];
   return (
     <>
-      <Header title="Conversations" iconeSrc="/returnarrow.png" />
+      <header className="headerConversations">
+        <Header title="Conversations" iconeSrc="/returnarrow.png" />
+      </header>
       <section id="search">
         <div className="searchBox">
           <form>

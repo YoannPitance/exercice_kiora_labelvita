@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Link from "next/link";
 import "./login.scss";
 import FormLogin from "../components/FormLogin";
@@ -6,24 +5,13 @@ import FormLogin from "../components/FormLogin";
 export default function Login() {
   return (
     <>
-      <div className="vector4">
-        <Image
-          src="/Vector4.png"
-          width={240}
-          height={380}
-          alt="image vectorielle design"
-        />
-      </div>
-      <section id="title">
-        <div className="logoTitle">
-          <Image
-            src="/Logo1.png"
-            width={219}
-            height={71}
-            alt="Logo LaBel'Vita"
-          />
+      <header className="headerLogin">
+        <div className="vector4">
+          <img src="/Vector4.png" alt="image vectorielle design" />
         </div>
-      </section>
+
+        <img className="logoTitle" src="/Logo1.png" alt="Logo LaBel'Vita" />
+      </header>
       <section id="connexion">
         <div className="titleConnexion">
           <h2>Connexion à votre espace</h2>
@@ -69,12 +57,7 @@ export default function Login() {
         </div>
       </section>
       <div className="vector5">
-        <img
-          src="/Vector5.png"
-          width={300}
-          height={210}
-          alt="image vectorielle design"
-        />
+        <img src="/Vector5.png" alt="image vectorielle design" />
       </div>
     </>
   );

@@ -1,10 +1,15 @@
-.header{    
+.headerAgenda{    
     display: flex;
     justify-content: space-around;
     align-items: center;
     padding-right: 10px;
+    
     .userPhoto{
         padding-left: 10px;
+    }
+
+    .iconeAgenda{
+        position: relative;
     }
     h2{
         font-size: 20px;
@@ -15,6 +20,7 @@
     }
 }
 #mesRdv{
+    
     display: flex;
     flex-direction: column;
     margin: 0 auto;
@@ -112,46 +118,45 @@
         }
         
     }
-
 }
-.collapse {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 393px;
-    box-shadow: 0 -5px 15px -10px #333;
-    background-color: #ffffff;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-       
-    &.show {
-        height: 171px;
+main{
+    position: relative;
 
-        .collapse-content {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        padding-bottom: 10px;
+    .containerCollapse {
+        position: absolute;
+        bottom: 0px;
+
+        .collapseContent{               
+            
+            width: 393px;
+            box-shadow: 0 -5px 15px -10px #333;
+            background-color: #ffffff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            height: 171px;            
         }
-    }          
-    
-    .btn-circle {
-        width: 119px;
-        height: 119px;
-        border-radius: 50%;
-        border: none;
-        background-color: #2EA5E1;
-        color: #fff;
-        font-size: 18px;
-        font-weight: 600;                    
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        cursor: pointer;
+        
+        .btn-circle {
+            width: 119px;
+            height: 119px;
+            border-radius: 50%;
+            border: none;
+            background-color: #2EA5E1;
+            color: #fff;
+            font-size: 18px;
+            font-weight: 600;                    
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+        }
     }
-}
+
+}    
+
+
 
 
 

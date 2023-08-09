@@ -1,13 +1,26 @@
 "use client";
-import React, { useState } from "react";
+import { useState } from "react";
 import Header from "../components/Header";
 import BlocRdv from "../components/BlocRdv";
-import CollapseRdv from "../components/CollapseRdv";
+
 import "./agenda.scss";
 
 export default function Agenda() {
   const [activeRdvIndex, setActiveRdvIndex] = useState(-1);
-  const [isCollapseOpen, setIsCollapseOpen] = useState(false);
+  const [isContainerCollapseActive, setIsContainerCollapseActive] =
+    useState(false);
+
+  const handleRdvClick = (index) => {
+    setActiveRdvIndex((prevIndex) => (prevIndex === index ? -1 : index)); // Activer/désactiver le rdv au clic
+    setIsContainerCollapseActive(index !== -1); // Mettre à jour l'état de la div containerCollapse
+  };
+
+  const handleButtonClick = (e) => {
+    // Empêche l'événement de se propager jusqu'au conteneur du collapse
+    e.stopPropagation();
+    // Gérer le clic sur le bouton ici (par exemple, afficher une alerte)
+    alert("Je suis arrivé chez vous!");
+  };
 
   // données de rendez-vous avec des dates différentes (pourront être appelées depuis l'API et db)
   const rdvs = [
@@ -33,12 +46,17 @@ export default function Agenda() {
   }, {});
 
   return (
-    <>
-      <Header
-        imageUrl="/userphoto.png"
-        title="Bienvenue User"
-        iconeSrc="/logochat.png"
-      />
+    <main>
+      <header className="headerAgenda">
+        <Header
+          imageUrl="/userphoto.png"
+          title="Bienvenue User"
+          iconeSrc="/logochat.png"
+          url="/conversations"
+          classIcone="iconeAgenda"
+        />
+      </header>
+
       <section id="mesRdv">
         <h2>Mes rendez-vous</h2>
         {Object.entries(groupedRdvs).map(([date, rdvs], index) => (
@@ -47,12 +65,21 @@ export default function Agenda() {
             date={date}
             rdvs={rdvs}
             isActive={index === activeRdvIndex}
-            setIsActive={() => setActiveRdvIndex(index)}
-            setIsCollapseOpen={setIsCollapseOpen}
+            setIsActive={() => handleRdvClick(index)}
           />
         ))}
+        <div
+          className={`containerCollapse ${
+            isContainerCollapseActive ? "containerCollapseActive" : ""
+          }`}
+        >
+          <div className="collapseContent">
+            <button className="btn-circle" onClick={handleButtonClick}>
+              Signaler mon arrivée
+            </button>
+          </div>
+        </div>
       </section>
-      <CollapseRdv isOpen={isCollapseOpen} />
-    </>
+    </main>
   );
 }

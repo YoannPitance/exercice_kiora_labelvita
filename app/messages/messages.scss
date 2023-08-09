@@ -1,23 +1,28 @@
-.header{
+.headerMessages{
+    position: relative;
+    display: flex;
+    align-items: center;
     flex-direction: row-reverse;
-    justify-content: center;    
+    justify-content: center;
+
     .userPhoto{
         display: none;
-    }    
-    .icone{
+    }
+    a{
         position: absolute;
         left: 30px;
         top: 35px;
     }
 }
 #chatSection{
+    height: 665px;
     display: flex;
     flex-direction: column;
     align-items: center ;
     font-size: 14px;
 
     h3{
-        font-size: 18px;
+        font-size: 16px;
         margin-bottom: 20px;
     }
 
@@ -58,8 +63,75 @@
         margin: 15px 55px 0px 0px;
         display: flex;
         justify-content: space-between;
-        background: linear-gradient(0deg, rgba(255,255,255,1) 0%, rgba(233,233,233,1) 10%);
+        background: linear-gradient(0deg, rgba(255,255,255,1) 0%, rgba(233,233,233,1) 2%);
         
+    }
+    
+}
+footer{
+    border-top: 2px solid #efefef;    
+    display: flex;
+    justify-content: center;    
+    align-items: center;    
+    width: 100%; 
+    height: 100px;   
+    margin: 0px auto;
+    form{
+        display: flex;
+        position: relative;
+        align-items: center;
+        a{
+            padding-right: 20px;
+        }
+
+
+        input{
+            
+            border-top: 1px solid #b8b8b8;
+            border-bottom: 1px solid #b8b8b8;
+            border-left: 1px solid #b8b8b8;
+            border-right: 0px solid white;
+            border-radius: 5px 0px 0px 5px;            
+            width: 249px;
+            height: 50px;
+            &::-webkit-input-placeholder{
+                padding-left: 15px;
+                font-size: 15px;
+                color: #969696;
+            }
+            &::-moz-placeholder{
+                padding-left: 15px;
+                font-size: 15px;
+                color: #969696;
+            }
+            &:-ms-input-placeholder{
+                padding-left: 15px;
+                font-size: 15px;
+                color: #969696;
+            }
+            &::-ms-input-placeholder{
+                padding-left: 15px;
+                font-size: 15px;
+                color: #969696;
+            }
+            &::placeholder{
+                padding-left: 15px;
+                font-size: 15px;
+                color: #969696;
+            }
+        }
+        button{
+            border-top: 1px solid #b8b8b8;
+            border-bottom: 1px solid #b8b8b8;
+            border-right: 1px solid #b8b8b8;
+            border-left: 0px solid white;            
+            height: 54px;    
+            border-radius: 0px 5px 5px 0px;        
+            background-color: white;
+            padding-left: 0;
+            padding-right: 15px;
+            
+        }
     }
     
 }
