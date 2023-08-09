@@ -1,16 +1,24 @@
 "use client";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Rdv from "./Rdv";
 
 export default function BlocRdv({ date, rdvs }) {
   const [activeRdvIndex, setActiveRdvIndex] = useState(-1);
+  const [isActiveContainer, setIsActiveContainer] = useState(false);
 
   const handleRdvClick = (index) => {
     setActiveRdvIndex((prevIndex) => (prevIndex === index ? -1 : index)); // Activer/désactiver le rdv au clic
   };
 
+  // Vérifier si un rdv est actif pour définir la classe active/inactive du conteneur
+  useEffect(() => {
+    setIsActiveContainer(rdvs.some((rdv, index) => index === activeRdvIndex));
+  }, [activeRdvIndex, rdvs]);
+
   return (
-    <div className="containerRdv">
+    <div
+      className={`containerRdv ${isActiveContainer ? "active" : "inactive"}`}
+    >
       {date && (
         <div className="date">
           <h1>{date}</h1>
